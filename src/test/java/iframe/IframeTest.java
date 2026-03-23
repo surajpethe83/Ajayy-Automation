@@ -1,5 +1,7 @@
 package iframe;
 
+import java.sql.Driver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,7 +33,7 @@ public class IframeTest {
 		}
 
 	public void tearDown() {
-		
+		Driver.cl
 	}
 	
 }

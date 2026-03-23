@@ -10,11 +10,8 @@ import org.testng.annotations.Test;
 public class CrossBrowserTest {
 
 	WebDriver driver;
-
-	not working
 	
 	@Test
-	
 	@Parameters("browser")
 	public void multiBrowserLaunch(String browser) {
 

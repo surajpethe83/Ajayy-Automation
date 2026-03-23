@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="iframe.IframeTest">
+      <class name="crossbrowser.CrossBrowserTest">
         <methods>
-          <include name="iframeTestFunctionality"/>
+          <include name="multiBrowserLaunch"/>
         </methods>
-      </class> <!-- iframe.IframeTest -->
+      </class> <!-- crossbrowser.CrossBrowserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
