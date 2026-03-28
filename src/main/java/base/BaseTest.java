@@ -21,103 +21,96 @@ import org.testng.log4testng.Logger;
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-
 public class BaseTest {
 
+	public static WebDriver driver;
+	public static ExtentReports extent;
+	public static ExtentTest test;
+	public static Logger log;
+	public static Properties prop;
 
-    public static WebDriver driver;
-    public static ExtentReports extent;
-    public static ExtentTest test;
-    public static Logger log;
-    public static Properties prop;
+	// ==========================================================
+	// REPORT INITIALIZATION
+	// ==========================================================
+	@BeforeSuite
+	public void startReport() {
 
-    //==========================================================
-    //                 REPORT INITIALIZATION
-    //==========================================================
-    @BeforeSuite
-    public void startReport() {
+		ExtentSparkReporter reporter = new ExtentSparkReporter("test-output/ExtentReport.html");
 
-        ExtentSparkReporter reporter =
-                new ExtentSparkReporter("test-output/ExtentReport.html");
+		extent = new ExtentReports();
+		extent.attachReporter(reporter);
 
-        extent = new ExtentReports();
-        extent.attachReporter(reporter);
+		log = Logger.getLogger(BaseTest.class);
+		log.info("===== Test Suite Started =====");
+	}
 
-        log = Logger.getLogger(BaseTest.class);
-        log.info("===== Test Suite Started =====");
-    }
+	// ==========================================================
+	// LOAD CONFIG + LAUNCH BROWSER
+	// ==========================================================
+	@BeforeClass
+	public void setup() {
 
-    //==========================================================
-    //                 LOAD CONFIG + LAUNCH BROWSER
-    //==========================================================
-    @BeforeClass
-    public void setup() {
+		try {
+			prop = new Properties();
+			FileInputStream fis = new FileInputStream("src/main/resources/configuration.properties");
+			prop.load(fis);
 
-        try {
-            prop = new Properties();
-            FileInputStream fis =
-                    new FileInputStream("src/main/resources/configuration.properties");
-            prop.load(fis);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		String browser = prop.getProperty("browser");
+		String url = prop.getProperty("url");
 
-        String browser = prop.getProperty("browser");
-        String url = prop.getProperty("url");
+		if (browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions options = new ChromeOptions();
 
-        if (browser.equalsIgnoreCase("chrome")) {
+			options.addArguments("--disable-gpu");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--window-size=1920,1080");
 
+			driver = new ChromeDriver(options);
 
+		}
 
-            ChromeOptions options = new ChromeOptions();
+		else if (browser.equalsIgnoreCase("edge")) {
 
-            options.addArguments("--disable-gpu");
-            options.addArguments("--no-sandbox");
-            options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--window-size=1920,1080");
+			driver = new EdgeDriver();
 
-            driver = new ChromeDriver(options);
+		}
 
-        }
+		else if (browser.equalsIgnoreCase("firefox")) {
 
-        else if (browser.equalsIgnoreCase("edge")) {
+			driver = new FirefoxDriver();
 
-            driver = new EdgeDriver();
+		}
 
-        }
+		else {
 
-        else if (browser.equalsIgnoreCase("firefox")) {
+			throw new RuntimeException("Invalid browser name in config.properties");
 
-            driver = new FirefoxDriver();
+		}
 
-        }
+		driver.manage().window().maximize();
 
-        else {
+		driver.get(url);
+		log.info("Navigated to URL: " + url);
+	}
 
-            throw new RuntimeException("Invalid browser name in config.properties");
+	// ==========================================================
+	// CREATE EXTENT TEST BEFORE EVERY @Test METHOD
+	// ==========================================================
+	@BeforeMethod
+	public void createExtentTest(Method method) {
 
-        }
+		test = extent.createTest(method.getName());
+		log.info("===== Starting Test: " + method.getName() + " =====");
+	}
 
-        driver.manage().window().maximize();
-
-        driver.get(url);
-        log.info("Navigated to URL: " + url);
-    }
-
-    //==========================================================
-    //   CREATE EXTENT TEST BEFORE EVERY @Test METHOD
-    //==========================================================
-    @BeforeMethod
-    public void createExtentTest(Method method) {
-
-        test = extent.createTest(method.getName());
-        log.info("===== Starting Test: " + method.getName() + " =====");
-    }
-
-    //==========================================================
-    //                      SCREENSHOT
-    //==========================================================
+	// ==========================================================
+	// SCREENSHOT
+	// ==========================================================
 //    public String takeScreenshot(String testName) {
 //
 //        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -140,47 +133,47 @@ public class BaseTest {
 //        return path;
 //    }
 
-    //==========================================================
-    //           ADD SCREENSHOT TO EXTENT ON FAILURE
-    //==========================================================
-    @AfterMethod
-    public void tearDownMethod(ITestResult result) {
+	// ==========================================================
+	// ADD SCREENSHOT TO EXTENT ON FAILURE
+	// ==========================================================
+	@AfterMethod
+	public void tearDownMethod(ITestResult result) {
 
-        if (result.getStatus() == ITestResult.FAILURE) {
+		if (result.getStatus() == ITestResult.FAILURE) {
 
 //            String filePath = takeScreenshot(result.getName());
 //
 //            String base64 =
 //                    ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 
-            test.fail("Test Failed: " + result.getThrowable());
+			test.fail("Test Failed: " + result.getThrowable());
 //            test.addScreenCaptureFromPath(filePath);
 //            test.addScreenCaptureFromBase64String(base64);
 
-            log.error("Test failed: " + result.getName());
-        }
-    }
+			log.error("Test failed: " + result.getName());
+		}
+	}
 
-    //==========================================================
-    //                 CLOSE BROWSER
-    //==========================================================
-    @AfterClass
-    public void closeBrowser() {
+	// ==========================================================
+	// CLOSE BROWSER
+	// ==========================================================
+	@AfterClass
+	public void closeBrowser() {
 
-        if (driver != null) {
+		if (driver != null) {
 
-            driver.quit();
-            log.info("Browser closed");
-        }
-    }
+			driver.quit();
+			log.info("Browser closed");
+		}
+	}
 
-    //==========================================================
-    //             FLUSH REPORT
-    //==========================================================
-    @AfterSuite
-    public void flushReport() {
+	// ==========================================================
+	// FLUSH REPORT
+	// ==========================================================
+	@AfterSuite
+	public void flushReport() {
 
-        extent.flush();
-        log.info("===== Test Suite Finished =====");
-    }
+		extent.flush();
+		log.info("===== Test Suite Finished =====");
+	}
 }

@@ -40,7 +40,6 @@ public class LoginReadExcelUserNameAndPassword {
 		String expectedTitle = "Swag Labs";
 		Assert.assertEquals(actualTitle, expectedTitle, "page title does not matches");
 
-		driver.switchTo().alert().accept();
 		
 	}
 

@@ -1,34 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-21T13:19:27 IST" name="Default suite" finished-at="2026-03-21T13:19:27 IST" duration-ms="88">
+  <suite started-at="2026-03-29T01:31:57 IST" name="Default suite" finished-at="2026-03-29T01:32:06 IST" duration-ms="9428">
     <groups>
     </groups>
-    <test started-at="2026-03-21T13:19:27 IST" name="Default test" finished-at="2026-03-21T13:19:27 IST" duration-ms="88">
-      <class name="crossbrowser.CrossBrowserTest">
-        <test-method signature="multiBrowserLaunch(java.lang.String)[pri:0, instance:crossbrowser.CrossBrowserTest@62379589]" started-at="2026-03-21T13:19:27 IST" name="multiBrowserLaunch" finished-at="2026-03-21T13:19:27 IST" duration-ms="0" status="FAIL">
+    <test started-at="2026-03-29T01:31:57 IST" name="Default test" finished-at="2026-03-29T01:32:06 IST" duration-ms="9428">
+      <class name="swaglab.DashboardTest">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:31:57 IST" name="startReport" finished-at="2026-03-29T01:31:57 IST" duration-ms="305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReport -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:31:57 IST" name="setUp" finished-at="2026-03-29T01:32:01 IST" duration-ms="3744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginTest_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:01 IST" name="loginTest_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="4808" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest_SwagLab -->
+        <test-method signature="verifyAddToCartUpdatesCartBadge_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyAddToCartUpdatesCartBadge_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddToCartUpdatesCartBadge_SwagLab -->
+        <test-method signature="verifyAllElementsOnProductCard_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyAllElementsOnProductCard_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllElementsOnProductCard_SwagLab -->
+        <test-method signature="verifyProductsAreDisplayedOnDashboard_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyProductsAreDisplayedOnDashboard_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="36" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductsAreDisplayedOnDashboard_SwagLab -->
+        <test-method signature="verifyUserNavigatesToProductDetailsPage_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyUserNavigatesToProductDetailsPage_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserNavigatesToProductDetailsPage_SwagLab -->
+        <test-method signature="verifyloginissuccessful_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyloginissuccessful_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="40" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyloginissuccessful_SwagLab -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1774728126881" status="FAIL">
           <exception class="org.testng.TestNGException">
             <message>
               <![CDATA[
-Parameter 'browser' is required by @Test on method multiBrowserLaunch but has not been marked @Optional or defined
-in C:\Users\Admin\AppData\Local\Temp\testng-eclipse--517161414\testng-customsuite.xml]]>
+Can inject only one of <ITestContext, XmlTest> into a @AfterClass annotated tearDown.
+For more information on native dependency injection please refer to https://testng.org/#_dependency_injection]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by @Test on method multiBrowserLaunch but has not been marked @Optional or defined
-in C:\Users\Admin\AppData\Local\Temp\testng-eclipse--517161414\testng-customsuite.xml
-at org.testng.internal.Parameters.createParams(Parameters.java:264)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:352)
-at org.testng.internal.Parameters.createParameters(Parameters.java:690)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:885)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
-at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:949)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+Can inject only one of <ITestContext, XmlTest> into a @AfterClass annotated tearDown.
+For more information on native dependency injection please refer to https://testng.org/#_dependency_injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:442)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:347)
+at org.testng.internal.Parameters.createParameters(Parameters.java:699)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
+at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfigurations(TestMethodWorker.java:238)
+at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:223)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:137)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:741)
 at org.testng.TestRunner.run(TestRunner.java:616)
@@ -50,8 +79,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- multiBrowserLaunch -->
-      </class> <!-- crossbrowser.CrossBrowserTest -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- swaglab.DashboardTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
