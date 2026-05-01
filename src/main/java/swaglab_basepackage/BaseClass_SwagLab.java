@@ -8,8 +8,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -22,7 +22,7 @@ public class BaseClass_SwagLab {
 
 	public static ExtentReports extent;
 	public static ExtentTest test;
-	public static Logger log = Logger.getLogger(BaseClass_SwagLab.class);
+	public static Logger log ;
 
 
 	// ==========================================================
@@ -36,7 +36,7 @@ public class BaseClass_SwagLab {
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 
-		log = Logger.getLogger(BaseTest.class);
+		log = LogManager.getLogger(BaseTest.class);
 		log.info("===== Test Suite Started =====");
 	}
 

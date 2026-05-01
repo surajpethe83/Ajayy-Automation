@@ -16,7 +16,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.log4testng.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -40,7 +41,7 @@ public class BaseTest {
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 
-		log = Logger.getLogger(BaseTest.class);
+		log = LogManager.getLogger(BaseTest.class);
 		log.info("===== Test Suite Started =====");
 	}
 

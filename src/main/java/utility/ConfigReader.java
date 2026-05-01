@@ -11,7 +11,7 @@ public class ConfigReader {
 	    static { //A static block executes only once when the class is loaded (before any method calls).
 	        try {
 	        	//open file to read values
-	            FileInputStream fis = new FileInputStream("src/main/resources/configuration.properties");
+	            FileInputStream fis = new FileInputStream("src/main/resources/configurationAPI.properties");
 	            //hold key-value pairs from the properties file.
 	            prop = new Properties();
 	            //This loads all values from the file into memory.

@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="swaglab.DashboardTest">
+      <class name="crossbrowser.CrossBrowserTest">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="verifyAllElementsOnProductCard_SwagLab"/>
+          <include name="multiBrowserLaunch"/>
         </methods>
-      </class> <!-- swaglab.DashboardTest -->
+      </class> <!-- crossbrowser.CrossBrowserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -3,22 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="practicepackage.UploadFileSendKeys"/>
-      <class name="practicepackage.SelectClassTest"/>
       <class name="ajayautomation1.SauceLabLogintest"/>
       <class name="testngannotations.TestNGAnnotations"/>
-      <class name="orangehrm.AddAdminFlow"/>
-      <class name="practicepackage.MultipleActionsTest"/>
-      <class name="practicepackage.MouseActions"/>
-      <class name="practicepackage.HandleAutheticationTest"/>
-      <class name="practicepackage.IsEnabledTest"/>
-      <class name="practicepackage.MutiSelectDropDownTest"/>
-      <class name="practicepackage.AlertTest"/>
-      <class name="practicepackage.HandleBrokenImagesTest"/>
-      <class name="practicepackage.JavaScriptExecutorScrollIntoView"/>
-      <class name="practicepackage.Add_RemoveElementsTest"/>
-      <class name="ajayautomation1.LoginTest"/>
-      <class name="orangehrm.LoginTest"/>
+  
       <class name="practicepackage.DragAndDropClass"/>
     </classes>
   </test> <!-- Test -->

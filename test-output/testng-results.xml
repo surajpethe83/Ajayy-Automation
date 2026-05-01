@@ -1,86 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-29T01:31:57 IST" name="Default suite" finished-at="2026-03-29T01:32:06 IST" duration-ms="9428">
+  <suite started-at="2026-04-30T00:15:22 IST" name="Suite" finished-at="2026-04-30T00:15:41 IST" duration-ms="18221">
     <groups>
     </groups>
-    <test started-at="2026-03-29T01:31:57 IST" name="Default test" finished-at="2026-03-29T01:32:06 IST" duration-ms="9428">
-      <class name="swaglab.DashboardTest">
-        <test-method is-config="true" signature="startReport()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:31:57 IST" name="startReport" finished-at="2026-03-29T01:31:57 IST" duration-ms="305" status="PASS">
+    <test started-at="2026-04-30T00:15:22 IST" name="Test" finished-at="2026-04-30T00:15:41 IST" duration-ms="18221">
+      <class name="crossworld_test.SearchForBookTest">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:crossworld_test.SearchForBookTest@7c9d8e2]" started-at="2026-04-30T00:15:21 IST" name="startReport" finished-at="2026-04-30T00:15:22 IST" duration-ms="1537" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:31:57 IST" name="setUp" finished-at="2026-03-29T01:32:01 IST" duration-ms="3744" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crossworld_test.SearchForBookTest@7c9d8e2]" started-at="2026-04-30T00:15:22 IST" name="setUp" finished-at="2026-04-30T00:15:35 IST" duration-ms="12555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginTest_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:01 IST" name="loginTest_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="4808" status="PASS">
+        <test-method signature="searchForBook()[pri:0, instance:crossworld_test.SearchForBookTest@7c9d8e2]" started-at="2026-04-30T00:15:35 IST" name="searchForBook" finished-at="2026-04-30T00:15:41 IST" duration-ms="5582" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest_SwagLab -->
-        <test-method signature="verifyAddToCartUpdatesCartBadge_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyAddToCartUpdatesCartBadge_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="208" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddToCartUpdatesCartBadge_SwagLab -->
-        <test-method signature="verifyAllElementsOnProductCard_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyAllElementsOnProductCard_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="243" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAllElementsOnProductCard_SwagLab -->
-        <test-method signature="verifyProductsAreDisplayedOnDashboard_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyProductsAreDisplayedOnDashboard_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="36" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyProductsAreDisplayedOnDashboard_SwagLab -->
-        <test-method signature="verifyUserNavigatesToProductDetailsPage_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyUserNavigatesToProductDetailsPage_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="240" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserNavigatesToProductDetailsPage_SwagLab -->
-        <test-method signature="verifyloginissuccessful_SwagLab()[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="verifyloginissuccessful_SwagLab" finished-at="2026-03-29T01:32:06 IST" duration-ms="40" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyloginissuccessful_SwagLab -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:swaglab.DashboardTest@11bd0f3b]" started-at="2026-03-29T01:32:06 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1774728126881" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Can inject only one of <ITestContext, XmlTest> into a @AfterClass annotated tearDown.
-For more information on native dependency injection please refer to https://testng.org/#_dependency_injection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Can inject only one of <ITestContext, XmlTest> into a @AfterClass annotated tearDown.
-For more information on native dependency injection please refer to https://testng.org/#_dependency_injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:442)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:347)
-at org.testng.internal.Parameters.createParameters(Parameters.java:699)
-at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
-at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfigurations(TestMethodWorker.java:238)
-at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:223)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:137)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        </test-method> <!-- searchForBook -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:crossworld_test.SearchForBookTest@7c9d8e2]" started-at="2026-04-30T00:15:41 IST" name="tearDown" finished-at="2026-04-30T00:15:42 IST" duration-ms="1495" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- swaglab.DashboardTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- crossworld_test.SearchForBookTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

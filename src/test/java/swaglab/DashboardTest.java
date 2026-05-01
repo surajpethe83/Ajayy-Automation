@@ -126,5 +126,4 @@ public class DashboardTest extends BaseClass_SwagLab {
 		log.info("verify remove to cart product button displayed");
 		test.pass("verify all element present on product card");
 	}
-
 }

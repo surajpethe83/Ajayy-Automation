@@ -32,8 +32,6 @@ public class IframeTest {
 		System.out.println("Iframe text is "+ getIframeText2);
 		}
 
-	public void tearDown() {
-		Driver.cl
-	}
+	
 	
 }

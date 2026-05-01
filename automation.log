@@ -1,0 +1,7 @@
+2026-05-01 07:52:31 INFO  crossworld_test.SearchForBookTest - ===== Test Suite Started =====
+2026-05-01 07:52:52 INFO  crossworld_test.SearchForBookTest - Browser opened / url entered / driver get initialized 
+2026-05-01 07:52:54 INFO  crossworld_test.SearchForBookTest - search product in search bar
+2026-05-01 07:52:56 INFO  crossworld_test.SearchForBookTest - click on view more button on search popup
+2026-05-01 07:52:58 INFO  crossworld_test.SearchForBookTest - click on relavance filter
+2026-05-01 07:52:59 INFO  crossworld_test.SearchForBookTest - select filter Low to High price
+2026-05-01 07:53:00 INFO  crossworld_test.SearchForBookTest - ===== Test Suite Finished =====
