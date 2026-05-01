@@ -9,7 +9,9 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/AjayAutomates/HybridFramework.git'
+				
+                git branch: 'main', url: 'https://github.com/surajpethe83/Ajayy-Automation.git'
+                
             }
         }
 
