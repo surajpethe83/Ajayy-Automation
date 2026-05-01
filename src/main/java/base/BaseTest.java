@@ -50,7 +50,7 @@ public class BaseTest {
 	// ==========================================================
 	@BeforeClass
 	public void setup() {
-
+		ChromeOptions options;
 		try {
 			prop = new Properties();
 			FileInputStream fis = new FileInputStream("src/main/resources/configuration.properties");
@@ -64,7 +64,8 @@ public class BaseTest {
 		String url = prop.getProperty("url");
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			ChromeOptions options = new ChromeOptions();
+			options = new ChromeOptions();
+			options.addArguments("--headless=new");
 
 			options.addArguments("--disable-gpu");
 			options.addArguments("--no-sandbox");
@@ -78,6 +79,7 @@ public class BaseTest {
 		else if (browser.equalsIgnoreCase("edge")) {
 
 			driver = new EdgeDriver();
+			
 
 		}
 
