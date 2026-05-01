@@ -9,21 +9,19 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-				
                 git branch: 'main', url: 'https://github.com/surajpethe83/Ajayy-Automation.git'
-                
             }
         }
 
         stage('Build Project') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Run Automation Tests') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
@@ -34,7 +32,11 @@ pipeline {
         }
     }
 
-    post {   // ✅ MUST BE INSIDE pipeline
+    post {
+        always {
+            junit 'test-output/*.xml'
+        }
+
         success {
             emailext(
                 subject: "SUCCESS: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
