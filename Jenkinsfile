@@ -1,9 +1,8 @@
 pipeline {
     agent any
 
-
     tools {
- 		jdk 'JDK'
+        jdk 'JDK'
         maven 'Maven'
     }
 
@@ -15,15 +14,9 @@ pipeline {
             }
         }
 
-        stage('Build Project') {
+        stage('Build & Run Tests') {
             steps {
-                bat 'mvn clean compile'
-            }
-        }
-
-        stage('Run Automation Tests') {
-            steps {
-                bat 'mvn test'
+                bat 'mvn clean test'
             }
         }
 
@@ -36,7 +29,7 @@ pipeline {
 
     post {
         always {
-            junit 'test-output/*.xml'
+            junit 'test-output/testng-results.xml'
         }
 
         success {
