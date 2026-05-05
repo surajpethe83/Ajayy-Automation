@@ -22,21 +22,21 @@ pipeline {
 
         stage('Archive Reports') {
             steps {
-                archiveArtifacts artifacts: 'test-output/**/*.*', fingerprint: true
+                archiveArtifacts artifacts: 'target/surefire-reports/**/*.*', fingerprint: true
             }
         }
     }
 
     post {
         always {
-            junit 'test-output/testng-results.xml'
+            junit 'target/surefire-reports/*.xml'
         }
 
         success {
             emailext(
                 subject: "SUCCESS: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
                 body: "Build Passed ✅\nCheck details: ${env.BUILD_URL}",
-                to: "automationtestingprogramming@gmail.com"
+                to: "surajpethe83@gmail.com"
             )
         }
 
@@ -44,7 +44,7 @@ pipeline {
             emailext(
                 subject: "FAILED: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
                 body: "Build Failed ❌\nCheck details: ${env.BUILD_URL}",
-                to: "automationtestingprogramming@gmail.com"
+                to: "surajpethe83@gmail.com"
             )
         }
     }
